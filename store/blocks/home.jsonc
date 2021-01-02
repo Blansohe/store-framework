@@ -1,13 +1,47 @@
 {
   "store.home": { 
     "blocks": [
+      "list-context.image-list#home",
       "rich-text",
       "info-card#button-right",
       "info-card#button-left",
-      "shelf#home"
+      "flex-layout.row"
    
     ]
+  }, 
+  "list-context.image-list#home": {
+    "children": ["slider-layout#home-images"]
   },
+   "prop": {
+    "height": 600,
+    "images":[
+      {
+      "image": "https://dummyimage.com/1920x921/a8a8a8/ff0f9f.png&text=Slide+2",
+      "description": ""
+      },
+     {
+      "image": "https://dummyimage.com/1920x921/a8a8a8/ff0f9f.png&text=Slide+3",
+      "description": ""
+      },
+      {
+      "image": "https://dummyimage.com/1920x921/a8a8a8/ff0f9f.png&text=Slide+4",
+      "description": ""
+      }
+   ]
+  },
+
+"slider-layout#home-images":{
+  "props": {
+    "itemsPerPage": {
+    "desktop": 1,
+    "tablet": 1,
+    "phone": 1
+  },
+  "infinite":true,
+  "showPaginationDots": "never"
+}
+
+},
   "rich-text":{
     "props": {
       "text": "Bienvenidos",
@@ -22,7 +56,7 @@
     "props": {
       "isFullModeStyle": false,
       "textPosition": "right",
-      "imageUrl": "assets/img1.jpg",
+      "imageUrl": "https://appliancetheme.vteximg.com.br/arquivos/cozinha-rosa-min.png",
       "headline": "Vintage Pink",
       "subhead": "Give your kitchen a boho style adding vintage apparels.<br>Available until January 2020.",
       "callToActionMode": "button",
@@ -42,7 +76,8 @@
     "callToActionText": "Go to collection",
     "textAlignment": "center"
     }
-  },
+  }
+  /*,
   "shelf#home": {
     "blocks":["product-summary.shelf"],
     "props":{
@@ -57,8 +92,64 @@
         "titleText": "Más vendidos"
       }
     }
-  }
+  }*/
    
-  
+  ,
+  "flex-layout.row": {
+    "children": [
+      "info-card#col-left",
+      "flex-layout.col#col-right"
+    ]
+  },
+  "info-card#col-left": {
+    "props": {
+      "imageUrl": "assets/img2.jpg",
+      "isFullModeStyle": true,
+      "textPosition": "center",
+      "headline": "Lo más vendido",
+      "subhead": "Todo en uno",
+      "callToActionMode": "link",
+      "callToActionText": "Más información",
+      "callToActionUrl": "#",
+      "textAlignment": "center"
+    }
+  },
+  "flex-layout.col#col-right": {
+    "children":[
+      "info-card#col-right-1",
+      "info-card#col-right-2"
+    ]
+  },
+  "info-card#col-right-1": {
+    "props":{
+      "imageUrl": "assets/img3.jpg",
+      "isFullModeStyle": false,
+      "textPosition": "center",
+      "headline": "Edición 1",
+      "subhead": "Esta en tus manos",
+      "callToActionMode": "button",
+      "callToActionText": "Ver más",
+      "callToActionUrl": "#",
+      "textAlignment": "center"
+
+    }
+  }
+  ,
+  "info-card#col-right-2": {
+    "props":{
+      "imageUrl": "assets/img4.jpg",
+      "isFullModeStyle": false,
+      "headline": "Edición 2",
+      "subhead": "Novedades",
+      "callToActionText": "Ver más",
+      "callToActionUrl": "#",
+      "textAlignment": "center"
+      
+      
+      
+
+    }
+  }
+
 }
 
