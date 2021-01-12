@@ -1,36 +1,44 @@
 {
   "store.home": { 
     "blocks": [
-      "list-context.image-list#home",
+      "slider-layout#home",
+      "slider-layout",
       "rich-text",
-      "info-card#button-right",
-      "info-card#button-left",
-      "flex-layout.row"
-   
+      "info-card#clearance",
+      "info-card#vintage",
+      
+      "modal-trigger#cupon",
+      "responsive-layout.desktop#desktop", "responsive-layout.mobile#mobile",
+      "tab-layout#home"      
     ]
+    
   }, 
-  "list-context.image-list#home": {
-    "children": ["slider-layout#home-images"]
+  "info-card#clearance": {
+    "props": {
+      "id": "info-card-clearance",
+      "isFullModeStyle": false,
+      "textPosition": "left",
+      "imageUrl": "https://storecomponents.vteximg.com.br/arquivos/banner-infocard2.png",
+      "headline": "Clearance Sale",
+      "callToActionText": "DISCOVER",
+      "callToActionUrl": "/sale/d",
+      "textAlignment": "center"
+    }
   },
-   "prop": {
-    "height": 600,
-    "images":[
-      {
-      "image": "https://dummyimage.com/1920x921/a8a8a8/ff0f9f.png&text=Slide+2",
-      "description": ""
-      },
-     {
-      "image": "https://dummyimage.com/1920x921/a8a8a8/ff0f9f.png&text=Slide+3",
-      "description": ""
-      },
-      {
-      "image": "https://dummyimage.com/1920x921/a8a8a8/ff0f9f.png&text=Slide+4",
-      "description": ""
-      }
-   ]
-  },
-
-"slider-layout#home-images":{
+"info-card#vintage": {
+    "props": {
+        "id": "info-card-vintage",
+        "isFullModeStyle": false,
+        "textPosition": "right",
+        "imageUrl": "https://appliancetheme.vteximg.com.br/arquivos/cozinha-rosa-min.png",
+        "headline": "Vintage",
+        "callToActionText": "DISCOVER",
+        "callToActionUrl": "/sale/d",
+        "textAlignment": "center",
+        "blockClass": "vintage"
+    }
+},
+  "slider-layout#home-images":{
   "props": {
     "itemsPerPage": {
     "desktop": 1,
@@ -50,106 +58,140 @@
       "font": "t-heading-1"
     }
 
+  
   },
- 
-  "info-card#button-right": {
-    "props": {
-      "isFullModeStyle": false,
-      "textPosition": "right",
-      "imageUrl": "https://appliancetheme.vteximg.com.br/arquivos/cozinha-rosa-min.png",
-      "headline": "Vintage Pink",
-      "subhead": "Give your kitchen a boho style adding vintage apparels.<br>Available until January 2020.",
-      "callToActionMode": "button",
-      "callToActionText": "Explore",
-      "callToActionUrl": "/sale/d",
-      "textAlignment": "center"
-    }
-  },
-  "info-card#button-left": {
-    "props": {
-    "isFullModeStyle": false,
-    "textPosition": "left",
-    "imageUrl": "https://appliancetheme.vteximg.com.br/arquivos/cozinha-cinza-min.png",
-    "headline": "Shining chrome",
-    "subhead": "Give your kitchen a cool style adding warm metallic finishes.<br>Available until January 2020.",
-    "callToActionMode": "link",
-    "callToActionText": "Go to collection",
-    "textAlignment": "center"
-    }
-  }
-  /*,
-  "shelf#home": {
-    "blocks":["product-summary.shelf"],
-    "props":{
-      "orderBy": "OrderByTopSaleDESC",
-      "paginationDotsVisibility": "desktopOnly",
-      "productList":{
-        "maxItems": 10,
-        "itemsPerPage": 4,
-        "minItemsPerPage": 1,
-        "scroll": "BY_PAGE",
-        "arrows": true,
-        "titleText": "Más vendidos"
-      }
-    }
-  }*/
-   
-  ,
-  "flex-layout.row": {
+  "modal-trigger#cupon": {
     "children": [
-      "info-card#col-left",
-      "flex-layout.col#col-right"
+      "rich-text#cupon",
+      "modal-layout#cupon"
     ]
   },
-  "info-card#col-left": {
+  "rich-text#cupon": {
     "props": {
-      "imageUrl": "assets/img2.jpg",
-      "isFullModeStyle": true,
-      "textPosition": "center",
-      "headline": "Lo más vendido",
-      "subhead": "Todo en uno",
-      "callToActionMode": "link",
-      "callToActionText": "Más información",
-      "callToActionUrl": "#",
-      "textAlignment": "center"
+    "text": "Ver cupón",
+    "textAlignment": "CENTER",
+    "textPosition":"CENTER",
+    "font":"t-heading-3",
+    "color": "c-on-emphasis"
     }
   },
-  "flex-layout.col#col-right": {
-    "children":[
-      "info-card#col-right-1",
-      "info-card#col-right-2"
+  "modal-layout#cupon": {
+    "children": [
+      "rich-text#modal-content"
     ]
   },
-  "info-card#col-right-1": {
-    "props":{
-      "imageUrl": "assets/img3.jpg",
-      "isFullModeStyle": false,
-      "textPosition": "center",
-      "headline": "Edición 1",
-      "subhead": "Esta en tus manos",
-      "callToActionMode": "button",
-      "callToActionText": "Ver más",
-      "callToActionUrl": "#",
-      "textAlignment": "center"
-
+  "rich-text#modal-content": {
+    "props": {
+      "text": "Cupón: EXAMPLE",
+      "font": "t-heading-4",
+      "color": "c-on-emphasis"
+    }
+  },
+  "responsive-layout.desktop#desktop": {
+    "children": ["rich-text#desktop", "image#desktop"]
+  },
+  
+  "responsive-layout.mobile#mobile": {
+    "children": ["rich-text#mobile", "image#mobile"]
+  },
+  
+  "rich-text#desktop": {
+    "props": {
+      "text": "# Your Coffee, Your Way \n ### New Coffee Makers Collection (I'm on desktop)",
+      "textPosition": "CENTER",
+      "textAlignment": "CENTER"
+    }
+  },
+  
+  "rich-text#mobile": {
+    "props": {
+      "text": "# Your Coffee, Your Way \n ### New Coffee Makers Collection (I'm on mobile)",
+      "textPosition": "CENTER",
+      "textAlignment": "CENTER"
+    }
+  },
+  "image#desktop": {
+    "props": {
+      "src": "https://appliancetheme.vteximg.com.br/arquivos/Responsive-Image-Desktop.jpg?q=1",
+      "link": {
+        "url": "/small-appliances/coffee-makers"
+      } ,
+      "alt": "Coffee Makers Collection"
+    }
+  },
+  
+  "image#mobile": {
+    "props": {
+      "src": "https://appliancetheme.vteximg.com.br/arquivos/Responsive-Image-Mobile.jpg?q=1",
+      "link": {
+        "url": "/small-appliances/coffee-makers"
+      } ,
+      "alt": "Coffee Makers Collection"
+    }
+  },
+  "tab-layout#home": {
+    "children": [
+      "tab-list",
+      "tab-content"
+    ]
+  },
+  "tab-list": {
+    "children": [
+      "tab-list.item#1",
+      "tab-list.item#2"
+      ]
+  },
+  "tab-content": {
+    "children": [
+      "tab-content.item#1",
+      "tab-content.item#2"
+      ]
+  },
+  "tab-list.item#1": {
+    "props": {
+      "tabId": "Electrodomésticos",
+      "label": "Electrodomésticos",
+      "defaultActiveTab": true
+    }
+  },
+  "tab-list.item#2": {
+    "props": {
+      "tabId": "Linea Blanca",
+      "label": "Linea Blanca"
+    }
+  },
+  "tab-content.item#1": {
+    "children": [
+      "rich-text#1"
+    ],
+    "props": {
+      "tabId": "Electrodomésticos"
+    }
+  },
+  "tab-content.item#2": {
+    "children": [
+      "rich-text#2"
+    ],
+    "props": {
+      "tabId": "Linea Blanca"
+    }
+  },
+  "rich-text#1": {
+    "props": {
+      "text": "Texto para Electrodomésticos",
+      "textPosition": "CENTER",
+      "font": "t-heading-3"
+    }
+  },
+  "rich-text#2": {
+    "props": {
+      "text": "Texto para Linea Blanca",
+      "textPosition": "CENTER",
+      "font": "t-heading-3"
     }
   }
-  ,
-  "info-card#col-right-2": {
-    "props":{
-      "imageUrl": "assets/img4.jpg",
-      "isFullModeStyle": false,
-      "headline": "Edición 2",
-      "subhead": "Novedades",
-      "callToActionText": "Ver más",
-      "callToActionUrl": "#",
-      "textAlignment": "center"
-      
-      
-      
-
-    }
-  }
-
+    
 }
+
+
 
