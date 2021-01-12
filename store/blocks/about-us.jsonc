@@ -25,7 +25,7 @@
       "rich-text#about-content": {
         "props": {
           "text":
-            " This is the VTEX Minimum Theme, you can use it to test blocks usage and build your first store from scratch."
+            " # This is the **VTEX Minimum Theme**  \n ## h3 you can use it to test blocks usage and build your first store from scratch."
         }
       },
       "image#about-us": {
